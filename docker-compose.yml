@@ -1,0 +1,8 @@
+version: '2'
+services:
+  proxy:
+    build:
+      context: ./
+      dockerfile: ./proxy/static.proxy.dockerfile
+    ports:
+      - "443:443"
