@@ -1,0 +1,17 @@
+{
+  "name": "site-seed",
+  "version": "0.0.1",
+  "description": "a seed project for a docker/nginx/node/express driven website.",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://nickmeldrum@bitbucket.org/nickmeldrum/site-seed.git"
+  },
+  "author": "Nick Meldrum <nick@nickmeldrum.com> (http://nickmeldrum.com)",
+  "license": "UNLICENSED",
+  "homepage": "https://bitbucket.org/nickmeldrum/site-seed#readme"
+}

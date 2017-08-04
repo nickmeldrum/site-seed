@@ -1,5 +1,12 @@
 # A site seed
 
+## Introduction:
+
+This repo attempts to give a sensible basis for building a website using:
+
+ * Docker containers for hosting
+ * nginx for serving static files and proxying
+ * node/express for serving dynamic content
 
 ## Pre-reqs:
  * git - to get the repo obviously
