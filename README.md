@@ -12,5 +12,9 @@
  * browse to https://local.nickmeldrum.com/
 
 ## TODO:
- * get self-signed cert creation/installation instructions correct
+ * get self-signed cert creation/installation instructions correct (https://www.hackzine.org/using-https-with-self-signed-certificate-in-nginx.html)
+   * problem is our current one isn't trusted from a trusted CA authority I think?
  * get domain name put into env var
+   * remove cert from repo and create script as described in (https://www.hackzine.org/using-https-with-self-signed-certificate-in-nginx.html)
+   * variables the hosts.sh script
+   * look at what we can do in server.conf server_name value??? 
