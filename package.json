@@ -5,6 +5,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
+    "start": "node ./src/server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -13,5 +14,10 @@
   },
   "author": "Nick Meldrum <nick@nickmeldrum.com> (http://nickmeldrum.com)",
   "license": "UNLICENSED",
-  "homepage": "https://bitbucket.org/nickmeldrum/site-seed#readme"
+  "homepage": "https://bitbucket.org/nickmeldrum/site-seed#readme",
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "express": "^4.15.3"
+  }
 }

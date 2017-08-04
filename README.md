@@ -21,6 +21,8 @@ This repo attempts to give a sensible basis for building a website using:
 ## Next steps:
  * get node/express working in a docker container
  * get nginx proxying calls to node/express
+ * add pm2 for any reason?
+ * how do we ensure the site stays up? if nginx/node hangs - how do they automatically restart - something in docker?
 
 ## Defects/debt:
  * get self-signed cert creation/installation instructions correct (https://www.hackzine.org/using-https-with-self-signed-certificate-in-nginx.html)
