@@ -18,7 +18,11 @@ This repo attempts to give a sensible basis for building a website using:
  * docker-compose up --build
  * browse to https://local.nickmeldrum.com/
 
-## TODO:
+## Next steps:
+ * get node/express working in a docker container
+ * get nginx proxying calls to node/express
+
+## Defects/debt:
  * get self-signed cert creation/installation instructions correct (https://www.hackzine.org/using-https-with-self-signed-certificate-in-nginx.html)
    * problem is our current one isn't trusted from a trusted CA authority I think?
  * get domain name put into env var
