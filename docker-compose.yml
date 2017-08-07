@@ -6,3 +6,11 @@ services:
       dockerfile: ./proxy/static.proxy.dockerfile
     ports:
       - "443:443"
+    links:
+      - "webserver:webserver"
+  webserver:
+    build:
+      context: ./
+      dockerfile: ./src/server/server.dockerfile
+    ports:
+      - "80:80"
