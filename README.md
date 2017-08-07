@@ -13,17 +13,18 @@ This repo attempts to give a sensible basis for building a website using:
  * git - to get the repo obviously
  * Docker client
  * node+npm (just for hosts script)
-
-## Installation
  * in bash: `sudo ./build/hosts.sh`
- * docker-compose up --build
+
+## Production build
+ * ./build/compile.sh - does the production webpack compilation
+ * ./build/run.sh - runs the production server (nginx + node)
  * browse to https://local.nickmeldrum.com/
+ * ./build/stop.sh - gracefully shuts down the prod server
 
 ## Next steps:
  * fix ssl
  * create a node api server?
  * create a dev version of the docker compose - using volumes for updating of files from host
- * get webpack build behind the prod version
  * get webpack-dev-server behind the dev version
  * how do we ensure the site stays up? if nginx/node hangs - how do they automatically restart - something in docker?
  * add pm2 for any reason?
