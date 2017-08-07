@@ -6,6 +6,7 @@ This repo attempts to give a sensible basis for building a website using:
 
  * Docker containers for hosting
  * nginx for serving static files and proxying
+ * webpack for building client-side assets
  * node/express for serving dynamic content
  * Container orchestration using Docker compose
 
@@ -25,6 +26,7 @@ This repo attempts to give a sensible basis for building a website using:
  * fix ssl
  * create a node api server?
  * create a dev version of the docker compose - using volumes for updating of files from host
+ * as part of compilation - create a .zip artefact for the prod container to use?
  * get webpack-dev-server behind the dev version
  * how do we ensure the site stays up? if nginx/node hangs - how do they automatically restart - something in docker?
  * add pm2 for any reason?
