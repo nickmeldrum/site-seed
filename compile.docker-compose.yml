@@ -1,8 +1,8 @@
 version: '2'
 services:
-  build:
+  compile:
     build:
       context: ./
-      dockerfile: ./src/client/build.dockerfile
+      dockerfile: ./src/client/compile.dockerfile
     volumes:
       - ./assets:/usr/src/app/assets
