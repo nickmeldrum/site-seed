@@ -19,7 +19,7 @@ This repo attempts to give a sensible basis for building a website using:
 
 ## Production build
  * `compile` - does the production webpack compilation
- * `run` - runs the production server (nginx + node)
+ * `run` - runs the production server (nginx serving static/bundle assets + node express - primed for SSR)
  * browse to https://local.nickmeldrum.com/
  * `stop` - gracefully shuts down the prod server
 
@@ -39,4 +39,4 @@ This repo attempts to give a sensible basis for building a website using:
  * get domain name put into env var
    * remove cert from repo and create script as described in (https://www.hackzine.org/using-https-with-self-signed-certificate-in-nginx.html)
    * variables the hosts.sh script
-   * look at what we can do in server.conf server_name value??? 
+   * look at what we can do in server.conf server_name value???
