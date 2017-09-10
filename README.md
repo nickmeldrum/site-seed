@@ -14,18 +14,20 @@ This repo attempts to give a sensible basis for building a website using:
  * git - to get the repo obviously
  * Docker client
  * node+npm (just for hosts script)
- * in bash: `sudo ./build/hosts.sh`
+ * in bash: `./commands` to setup the path for the shell commands and ls the list of commands you can run in the shell
+ * in bash: `sudo hosts`
 
 ## Production build
- * ./build/compile.sh - does the production webpack compilation
- * ./build/run.sh - runs the production server (nginx + node)
+ * `compile` - does the production webpack compilation
+ * `run` - runs the production server (nginx + node)
  * browse to https://local.nickmeldrum.com/
- * ./build/stop.sh - gracefully shuts down the prod server
+ * `stop` - gracefully shuts down the prod server
 
 ## Next steps:
  * fix ssl
  * create a node api server?
  * create a dev version of the docker compose - using volumes for updating of files from host
+ * rationalise the inheritance of the dockerfiles - make 1 extend the other
  * as part of compilation - create a .zip artefact for the prod container to use?
  * get webpack-dev-server behind the dev version
  * how do we ensure the site stays up? if nginx/node hangs - how do they automatically restart - something in docker?
