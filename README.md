@@ -13,13 +13,13 @@ This repo attempts to give a sensible basis for building a website using:
 ## Pre-reqs:
  * git - to get the repo obviously
  * Docker client
- * node+npm (just for hosts script)
- * in bash: `./commands` to setup the path for the shell commands and ls the list of commands you can run in the shell
- * in bash: `sudo hosts`
+ * in bash 'dot source' the commands setup: `. ./commands` to setup the path for the shell commands and ls the list of commands you can run in the shell
+ * in bash: `sudo hosts` to add the local dns entry
 
 ## Production build
  * `compile` - does the production webpack compilation
  * `run` - runs the production server (nginx serving static/bundle assets + node express - primed for SSR)
+ * or `run-dev` - runs the dev server ()
  * browse to https://local.nickmeldrum.com/
  * `stop` - gracefully shuts down the prod server
 
