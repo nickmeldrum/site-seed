@@ -2,19 +2,30 @@ FROM nginx
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-RUN apt-get update && apt-get install -y \
-  yarn
+RUN apt-get update && \
+  apt-get install -y \
+    curl && \
+  apt-get install -my \
+    wget gnupg && \
+  apt-get remove -y \
+    cmdtest
+
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN apt-get update && \
+  apt-get install -y \
+    nodejs
+RUN npm install -g yarn
 
 COPY ./proxy/nickmeldrum.crt /etc/ssl/certs/nickmeldrum.crt
 COPY ./proxy/nickmeldrum.key /etc/ssl/private/nickmeldrum.key
 COPY ./proxy/* /etc/nginx/
 COPY ./proxy/prod.conf /etc/nginx/nginx.conf
 
-COPY package.json webpack.config.js src/client /usr/src/app/
+COPY package.json yarn.lock webpack.config.js /usr/src/app/
+RUN yarn
 
-RUN yarn install && \
-  yarn run build && \
-  rm -rf node_modules src webpack.config.js package.json
+COPY src/client /usr/src/app/src/client
+RUN yarn build && \
+  rm -rf ./src ./node_modules package.json yarn.lock webpack.config.js
 
 COPY ./static /usr/src/app
-COPY ./assets /usr/src/app/assets

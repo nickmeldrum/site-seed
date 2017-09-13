@@ -14,40 +14,43 @@ This repo attempts to give a sensible basis for building a website using:
 
  * git - to get this repo
  * Docker client
- * in bash 'dot source' the commands setup: `. ./commands` to setup the path for the shell commands and ls the list of commands you can run in the shell (this will have to be run for each new shell as we don't want to pollute your system more than we have to)
+ * in bash 'dot source' the commands setup: `. ./init` to setup the path for the shell commands and ls the list of commands you can run in the shell (this will have to be run for each new shell as we don't want to pollute your system more than we have to)
  * in bash: `sudo hosts` to add the local dns entry (only needs to be run once ever on each system)
 
 ## Running the app
 
- * `compile` - does the production webpack compilation
- * `run` - runs the production server (nginx serving static/bundle assets + node express - primed for SSR)
+ * `build` - creates the production nginx and node server containers
+ * `run` - runs the production nginx and node server containers (nginx serving static/bundle assets + node express - primed for SSR)
  * or `run-dev` - runs the dev server ()
  * browse to [https://local.nickmeldrum.com/](https://local.nickmeldrum.com/)
  * `stop` - gracefully shuts down the server
 
 ## How it works
 
-### The prod build:
+### For production:
 
-#### Compile:
+#### build:
 
 The static folder holds files that should be downloaded to the browser 'as is', the assets folder is for generated files that will be downloaded to the browser. No other folder should be available to the browser.
 
-Firstly the `compile` script must be run. This runs webpack to generate the static production bundle files and saves them to disk in the assets folder.
+Firstly the `build` script must be run. This builds:
 
-The compile script operates by building a docker image that simply does an `npm install` then an `npm run build-assets` which in turn runs webpack to spit out the bundle assets into the assets folder (which is volume mounted so it will appear on the host machine.)
+ 1. the nginx image build:
+  1. sets up the ssl certs
+  2. sets up the nginx config so that the static assets (and generated bundle files) are served from disk AND all other requests are sent to the node server (assumed to be requests for index.html which will be ssr'd)
+  3. copies static assets from the `/static` folder into the root of the web app
+  4. runs webpack (via `yarn build`) to generate the static production bundle files into the `/assets` folder in the web app
 
-The 'compile' docker image will be built, and the container run and exit on completion of webpack.
-
-TODO: We want to generate the prod images/containers in the compile stage and not run them. the containers are the artefacts we want to know about and push to a server to run the prod server.
+ 2. the node server image build:
+  1. installs dependencies using `yarn`
+  2. copies the whole src into the app ready for execution of the node express server
 
 #### Run:
 
-The 'prod' docker containers are twofold:
+Execute the `run` script which simply does a `docker-compose up` and runs both the nginx and node containers described above in the build step.
 
- 1. an nginx container that sets up the ssl certificates and runs nginx with a prod config that allows for static files to be picked up (by only copying the static and assets folders into the containers app folder) (TODO: have it forward the html requests to the webserver only)
-
- 2. a node webserver container that runs the node express server purely for generating the html (server side rendering)
+ 1. the nginx container will now serve up static files and proxy any other requests to the node web server
+ 2. the node server runs express (via `yarn start`) which will run SSR to serve up the index.html
 
 ## Next steps:
 
@@ -63,6 +66,7 @@ The 'prod' docker containers are twofold:
 
 ## Defects/debt:
 
+ * have added the webpack build into the nginx dockerfile - but there is a better approach described in the answer here that we should move to: [https://stackoverflow.com/questions/46191955/how-to-structure-an-nginx-docker-container-and-the-build-of-the-assets-it-serves/46195926#46195926](https://stackoverflow.com/questions/46191955/how-to-structure-an-nginx-docker-container-and-the-build-of-the-assets-it-serves/46195926#46195926)
  * the nginx prod config - it should only allow serving static files from /assets and /static - is that happening?
  * get self-signed cert creation/installation instructions correct [https://www.hackzine.org/using-https-with-self-signed-certificate-in-nginx.html](https://www.hackzine.org/using-https-with-self-signed-certificate-in-nginx.html)
    * problem is our current one isn't trusted from a trusted CA authority I think?
