@@ -21,7 +21,7 @@ This repo attempts to give a sensible basis for building a website using:
 
  * `build` - creates the production nginx and node server containers
  * `run` - runs the production nginx and node server containers (nginx serving static/bundle assets + node express - primed for SSR)
- * or `run-dev` - runs the dev server ()
+ * or `run-dev` - runs the dev server (TODO: this ain't working yet)
  * browse to [https://local.nickmeldrum.com/](https://local.nickmeldrum.com/)
  * `stop` - gracefully shuts down the server
 
@@ -57,6 +57,7 @@ Execute the `run` script which simply does a `docker-compose up` and runs both t
  * make it so nginx is forwarding any requests for the html to the node express server and have the webserver return the index.html (or generated html)
  * fix ssl
  * create a node api server?
+ * look at how yarn can use it's cache when build is happening in a docker image build
  * create a dev version of the docker compose - using volumes for updating of files from host
  * rationalise the inheritance of the dockerfiles - make 1 extend the other
  * as part of compilation - create a .zip artefact for the prod container to use?
