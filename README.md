@@ -54,7 +54,6 @@ Execute the `run` script which simply does a `docker-compose up` and runs both t
 
 ## Next steps:
 
- * make it so nginx is forwarding any requests for the html to the node express server and have the webserver return the index.html (or generated html)
  * fix ssl
  * create a node api server?
  * look at how yarn can use it's cache when build is happening in a docker image build
