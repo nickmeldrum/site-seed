@@ -1,0 +1,2 @@
+sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain proxy/cert/ca/ca.crt
+sudo security add-trusted-cert -d -r trustAsRoot -k /Library/Keychains/System.keychain proxy/cert/ca/ia.crt

@@ -1,2 +1,12 @@
 #!/bin/sh
+echo hope you remembered to set the SITESEEDDOMAIN environment variable?
+rm -f ./proxy/cert/v3.ext ./proxy/server.conf 2> /dev/null
+
+cp ./proxy/cert/v3.ext.template ./proxy/cert/v3.ext
+echo DNS.1 = $SITESEEDDOMAIN >> ./proxy/cert/v3.ext
+cp ./proxy/server.conf.template ./proxy/server.conf
+echo "server_name $SITESEEDDOMAIN;" >> ./proxy/server.conf
+
+./proxy/cert/create-cert
+
 docker-compose -f prod.docker-compose.yml build

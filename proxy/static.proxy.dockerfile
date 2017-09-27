@@ -16,8 +16,8 @@ RUN apt-get update && \
     nodejs
 RUN npm install -g yarn
 
-COPY ./proxy/nickmeldrum.crt /etc/ssl/certs/nickmeldrum.crt
-COPY ./proxy/nickmeldrum.key /etc/ssl/private/nickmeldrum.key
+COPY ./proxy/cert/siteseed-cert.crt /etc/ssl/certs/siteseed-cert.crt
+COPY ./proxy/cert/siteseed-cert.key /etc/ssl/private/siteseed-cert.key
 COPY ./proxy/* /etc/nginx/
 COPY ./proxy/prod.conf /etc/nginx/nginx.conf
 

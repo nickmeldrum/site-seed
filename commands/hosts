@@ -1,4 +1,4 @@
 #!/bin/sh
-if ! grep -q local.nickmeldrum.com "/etc/hosts"; then
-  echo 127.0.0.1 local.nickmeldrum.com >> /etc/hosts
+if ! grep -q "$SITESEEDDOMAIN" "/etc/hosts"; then
+  echo 127.0.0.1 "$SITESEEDDOMAIN" >> /etc/hosts
 fi

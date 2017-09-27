@@ -1,0 +1,5 @@
+listen 443 ssl;
+ssl_certificate /etc/ssl/certs/siteseed-cert.crt;
+ssl_certificate_key /etc/ssl/private/siteseed-cert.key;
+charset UTF-8;
+root /usr/src/app;

@@ -15,14 +15,16 @@ This repo attempts to give a sensible basis for building a website using:
  * git - to get this repo
  * Docker client
  * in bash 'dot source' the commands setup: `. ./init` to setup the path for the shell commands and ls the list of commands you can run in the shell (this will have to be run for each new shell as we don't want to pollute your system more than we have to)
- * in bash: `sudo hosts` to add the local dns entry (only needs to be run once ever on each system)
+ * in bash set the "SITESEEDDOMAIN" environment variable to the local domain name you want to run the site under with the command: `SITESEEDDOMAIN="local.somewhere.com"; export SITESEEDDOMAIN`
+ * in bash run: `sudo -E hosts` to add the local dns entry (only needs to be run once ever on each system)
+ * in bash run: `import-certs` to add the self-signed root certs into your keychain (so the site self-signed certificate can be trusted)
 
 ## Running the app
 
  * `build` - creates the production nginx and node server containers
  * `run` - runs the production nginx and node server containers (nginx serving static/bundle assets + node express - primed for SSR)
  * or `run-dev` - runs the dev server (TODO: this ain't working yet)
- * browse to [https://local.nickmeldrum.com/](https://local.nickmeldrum.com/)
+ * browse to [https://$SITESEEDDOMAIN/](https://$SITESEEDDOMAIN/)
  * `stop` - gracefully shuts down the server
 
 ## How it works

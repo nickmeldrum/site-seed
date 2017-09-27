@@ -2,3 +2,5 @@
 node_modules/
 npm-debug.log
 assets/
+proxy/cert/*.crt
+proxy/cert/*.key

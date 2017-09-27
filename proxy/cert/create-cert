@@ -1,0 +1,15 @@
+#!/bin/sh
+# thanks to https://www.hackzine.org/using-https-with-self-signed-certificate-in-nginx.html
+PASSWORD=Password1
+CERTDETAILS="/C=GB/ST=London/L=London/O=Site Seed International/OU=Site seed/CN=$SITESEEDDOMAIN"
+cd ./proxy/cert
+rm -f *.key *.crt 2> /dev/null
+openssl genrsa -des3 -out "$SITESEEDDOMAIN".orig.key -passout pass:$PASSWORD 2048
+openssl rsa -in "$SITESEEDDOMAIN".orig.key -out "$SITESEEDDOMAIN".key -passin pass:$PASSWORD
+rm "$SITESEEDDOMAIN".orig.key
+openssl req -new -key "$SITESEEDDOMAIN".key -out "$SITESEEDDOMAIN".csr -subj "$CERTDETAILS"
+openssl x509 -req -days 365 -sha256 -in "$SITESEEDDOMAIN".csr -CA ca/ia.crt -CAkey ca/ia.key -out "$SITESEEDDOMAIN".crt -passin pass:$PASSWORD -extfile ./v3.ext
+rm "$SITESEEDDOMAIN".csr
+mv "$SITESEEDDOMAIN".key siteseed-cert.key
+mv "$SITESEEDDOMAIN".crt siteseed-cert.crt
+cd ../..
