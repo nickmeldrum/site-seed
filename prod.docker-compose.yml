@@ -12,5 +12,3 @@ services:
     build:
       context: ./
       dockerfile: ./src/server/server.dockerfile
-    ports:
-      - "80:80"
