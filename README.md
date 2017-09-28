@@ -56,7 +56,6 @@ Execute the `run` script which simply does a `docker-compose up` and runs both t
 
 ## Next steps:
 
- * fix ssl
  * create a node api server?
  * look at how yarn can use it's cache when build is happening in a docker image build
  * create a dev version of the docker compose - using volumes for updating of files from host
@@ -65,14 +64,10 @@ Execute the `run` script which simply does a `docker-compose up` and runs both t
  * get webpack-dev-server behind the dev version
  * how do we ensure the site stays up? if nginx/node hangs - how do they automatically restart - something in docker?
  * add pm2 for any reason?
+ * possibly make the domainname file replacemenets and create-cert part of the `build` script part of the dockerfile?
+ * fix prod ssl
 
 ## Defects/debt:
 
  * have added the webpack build into the nginx dockerfile - but there is a better approach described in the answer here that we should move to: [https://stackoverflow.com/questions/46191955/how-to-structure-an-nginx-docker-container-and-the-build-of-the-assets-it-serves/46195926#46195926](https://stackoverflow.com/questions/46191955/how-to-structure-an-nginx-docker-container-and-the-build-of-the-assets-it-serves/46195926#46195926)
  * the nginx prod config - it should only allow serving static files from /assets and /static - is that happening?
- * get self-signed cert creation/installation instructions correct [https://www.hackzine.org/using-https-with-self-signed-certificate-in-nginx.html](https://www.hackzine.org/using-https-with-self-signed-certificate-in-nginx.html)
-   * problem is our current one isn't trusted from a trusted CA authority I think?
- * get domain name put into env var
-   * remove cert from repo and create script as described in [https://www.hackzine.org/using-https-with-self-signed-certificate-in-nginx.html](https://www.hackzine.org/using-https-with-self-signed-certificate-in-nginx.html)
-   * variables the hosts.sh script
-   * look at what we can do in server.conf server_name value???
