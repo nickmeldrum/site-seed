@@ -4,3 +4,5 @@ npm-debug.log
 assets/
 proxy/cert/*.crt
 proxy/cert/*.key
+proxy/cert/v3.ext
+proxy/server.conf
