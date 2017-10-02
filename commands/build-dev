@@ -2,4 +2,4 @@
 ./proxy/prepare-template-files && echo prepared template files... || exit 1
 ./proxy/cert/create-cert && echo cert created... || exit 1
 
-docker-compose -f prod.docker-compose.yml build
+docker-compose -f dev.docker-compose.yml build

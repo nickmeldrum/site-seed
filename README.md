@@ -56,6 +56,10 @@ Execute the `run` script which simply does a `docker-compose up` and runs both t
 
 ## Next steps:
 
+ * creating a dev build:
+   * get HMR working
+   * (get React in place and get RHL in?)
+   * get ssr watching and autoreloading server
  * create a node api server?
  * look at how yarn can use it's cache when build is happening in a docker image build
  * create a dev version of the docker compose - using volumes for updating of files from host

@@ -1,7 +1,8 @@
 FROM nginx
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-COPY ./proxy/$SITESEEDDOMAIN.crt /etc/ssl/certs/$SITESEEDDOMAIN.crt
-COPY ./proxy/$SITESEEDDOMAIN.key /etc/ssl/private/$SITESEEDDOMAIN.key
+
+COPY ./proxy/cert/siteseed-cert.crt /etc/ssl/certs/siteseed-cert.crt
+COPY ./proxy/cert/siteseed-cert.key /etc/ssl/private/siteseed-cert.key
 COPY ./proxy/* /etc/nginx/
-COPY ./proxy/prod.conf /etc/nginx/nginx.conf
+COPY ./proxy/dev.conf /etc/nginx/nginx.conf

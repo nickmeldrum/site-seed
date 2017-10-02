@@ -7,10 +7,17 @@ services:
     ports:
       - "443:443"
     links:
-      - "webserver:webserver"
-  webserver:
+      - "devserver:devserver"
+      - "ssrserver:ssrserver"
+    volumes:
+      - ./static:/usr/src/app
+  devserver:
+    build:
+      context: ./
+      dockerfile: ./src/client/client.dockerfile
+    volumes:
+      - ./src/client:/usr/src/app/src/client
+  ssrserver:
     build:
       context: ./
       dockerfile: ./src/server/server.dockerfile
-    ports:
-      - "80:80"

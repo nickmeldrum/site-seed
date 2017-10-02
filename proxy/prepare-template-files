@@ -1,0 +1,12 @@
+#!/bin/sh
+if [ -z "$SITESEEDDOMAIN" ]; then
+  echo SITESEEDDOMAIN env var not set, exiting...
+  echo run something like: 'SITESEEDDOMAIN="local.somewhere.com"; export SITESEEDDOMAIN' first...
+  exit 1
+fi
+rm -f ./proxy/cert/v3.ext ./proxy/server.conf 2> /dev/null
+
+cp ./proxy/cert/v3.ext.template ./proxy/cert/v3.ext
+echo DNS.1 = $SITESEEDDOMAIN >> ./proxy/cert/v3.ext
+cp ./proxy/server.conf.template ./proxy/server.conf
+echo "server_name $SITESEEDDOMAIN;" >> ./proxy/server.conf

@@ -1,0 +1,11 @@
+FROM node:7.5.0
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+RUN npm install -g yarn
+
+COPY package.json yarn.lock webpack.config.js /usr/src/app/
+RUN yarn
+
+EXPOSE 80
+CMD [ "yarn", "devserver" ]

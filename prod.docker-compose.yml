@@ -7,8 +7,8 @@ services:
     ports:
       - "443:443"
     links:
-      - "webserver:webserver"
-  webserver:
+      - "ssrserver:ssrserver"
+  ssrserver:
     build:
       context: ./
       dockerfile: ./src/server/server.dockerfile
