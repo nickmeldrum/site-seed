@@ -59,9 +59,7 @@ Execute the `run` script which simply does a `docker-compose up` and runs both t
  * creating a dev build:
    * get HMR working
    * (get React in place and get RHL in?)
-   * update docs on how dev build works
-   * check prod build still works
-   * rename client and server to UI and ssr respectively
+   * update docs on how dev build works (and with new naming)
  * create a node api server?
  * look at how yarn can use it's cache when build is happening in a docker image build
  * rationalise the inheritance of the dockerfiles - make 1 extend the other

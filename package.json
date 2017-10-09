@@ -5,10 +5,10 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/server/index.js",
-    "devssr": "./node_modules/nodemon/bin/nodemon.js src/server/index.js",
-    "build": "webpack",
-    "devserver": "webpack-dev-server -d --port 80 --host 0.0.0.0",
+    "ssr": "node ./src/ssr/index.js",
+    "dev-ssr": "nodemon src/ssr/index.js",
+    "ui": "webpack",
+    "dev-ui": "webpack-dev-server -d --port 80 --host 0.0.0.0",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

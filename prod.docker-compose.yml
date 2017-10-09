@@ -11,4 +11,4 @@ services:
   ssrserver:
     build:
       context: ./
-      dockerfile: ./src/server/prodssr.dockerfile
+      dockerfile: ./src/ssr/prodssr.dockerfile

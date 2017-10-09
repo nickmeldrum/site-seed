@@ -6,5 +6,5 @@ const defaultPort = 80
 const server = http.createServer(app)
 
 server.listen(defaultPort, () => {
-  console.log('ssrserver listening...')
+  console.log('ssr server listening...')
 })

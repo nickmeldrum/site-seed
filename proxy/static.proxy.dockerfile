@@ -24,8 +24,8 @@ COPY ./proxy/prod.conf /etc/nginx/nginx.conf
 COPY package.json yarn.lock webpack.config.js /usr/src/app/
 RUN yarn
 
-COPY src/client /usr/src/app/src/client
-RUN yarn build && \
+COPY src/ui /usr/src/app/src/ui
+RUN yarn ui && \
   rm -rf ./src ./node_modules package.json yarn.lock webpack.config.js
 
-COPY ./static /usr/src/app
+COPY ./src/static /usr/src/app

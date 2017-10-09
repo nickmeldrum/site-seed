@@ -7,7 +7,7 @@ RUN npm install -g yarn
 COPY package.json yarn.lock webpack.config.js /usr/src/app/
 RUN yarn
 
-COPY ./.babelrc /usr/src/app/.babelrc
+COPY . /usr/src/app
 EXPOSE 80
 
-CMD [ "yarn", "devssr" ]
+CMD [ "yarn", "ssr" ]

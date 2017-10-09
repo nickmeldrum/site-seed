@@ -7,19 +7,20 @@ services:
     ports:
       - "443:443"
     links:
-      - "devserver:devserver"
+      - "uiserver:uiserver"
       - "ssrserver:ssrserver"
     volumes:
-      - ./static:/usr/src/app
-  devserver:
+      - ./src/static:/usr/src/app
+  uiserver:
     build:
       context: ./
-      dockerfile: ./src/client/client.dockerfile
+      dockerfile: ./src/ui/ui.dockerfile
     volumes:
-      - ./src/client:/usr/src/app/src/client
+      - ./src/ui:/usr/src/app/src/ui
   ssrserver:
     build:
       context: ./
-      dockerfile: ./src/server/devssr.dockerfile
+      dockerfile: ./src/ssr/devssr.dockerfile
     volumes:
-      - ./src:/usr/src/app/src
+      - ./src/ui:/usr/src/app/src/ui
+      - ./src/ssr:/usr/src/app/src/ssr
