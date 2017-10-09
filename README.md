@@ -57,7 +57,7 @@ Execute the `run` script which simply does a `docker-compose up` and runs both t
 ## Next steps:
 
  * creating a dev build:
-   * get HMR working
+   * instead of using nodemon that requires a server restart - watcher will re-require the app modules: https://medium.com/@kevinsimper/dont-use-nodemon-there-are-better-ways-fc016b50b45e
    * (get React in place and get RHL in?)
    * update docs on how dev build works (and with new naming)
  * create a node api server?
