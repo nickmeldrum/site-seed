@@ -60,12 +60,11 @@ Execute the `run` script which simply does a `docker-compose up` and runs both t
    * get HMR working
    * (get React in place and get RHL in?)
    * get ssr watching and autoreloading server
+   * update docs on how dev build works
  * create a node api server?
  * look at how yarn can use it's cache when build is happening in a docker image build
- * create a dev version of the docker compose - using volumes for updating of files from host
  * rationalise the inheritance of the dockerfiles - make 1 extend the other
  * as part of compilation - create a .zip artefact for the prod container to use?
- * get webpack-dev-server behind the dev version
  * how do we ensure the site stays up? if nginx/node hangs - how do they automatically restart - something in docker?
  * add pm2 for any reason?
  * possibly make the domainname file replacemenets and create-cert part of the `build` script part of the dockerfile?
