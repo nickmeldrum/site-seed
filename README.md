@@ -1,5 +1,9 @@
 # A site seed
 
+## Motivation:
+
+I got fed up with (mostly React) starter kits being little more than a demo project - not truly ready to go to production and actually quite lacking in a decent dev environment (lots of react/webpack bells and whistles but little true infrastructure meat.) This attempts to address this and by way of building the application on top of docker utilising nginx in front of node servers should provide a sound basis for a truly reliable dev AND PRODUCTION ready web application.
+
 ## Introduction:
 
 This repo attempts to give a sensible basis for building a website using:
