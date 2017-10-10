@@ -45,13 +45,15 @@ The static folder holds files that should be downloaded to the browser 'as is', 
 
 Firstly the `build` script must be run. This script sets up template files that need the domain name injected in, then creates the certificates for the chosen domain name. Then it builds the 2 prod images (nginx proxy server and node ssr server) by doing a `docker-compose build` against the `prod.docker-compose.yml` file.
 
- 1. the nginx image build:
+The nginx image build:
+
   1. copies the certs into the right location
   2. sets up the nginx config so that the static assets (and generated bundle files) are served from disk AND all other requests are sent to the node server (assumed to be requests for index.html which will be ssr'd)
   3. copies static assets from the `/src/static` folder into the root of the web app
   4. runs webpack (via `yarn ui`) to generate the static production bundle files into the `/assets` folder in the web app
 
- 2. the node server image build:
+The node server image build:
+
   1. installs dependencies using `yarn`
   2. copies the whole src into the app ready for execution of the node express server (via the `yarn ssr` command)
 
