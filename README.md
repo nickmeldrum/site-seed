@@ -4,6 +4,14 @@
 
 I got fed up with (mostly React) starter kits being little more than a demo project - not truly ready to go to production and actually quite lacking in a decent dev environment (lots of react/webpack bells and whistles but little true infrastructure meat.) This attempts to address this and by way of building the application on top of docker utilising nginx in front of node servers should provide a sound basis for a truly reliable dev AND PRODUCTION ready web application.
 
+Another key motivation was separation of concerns from an infrastructure point of view. Too often I see the same node server doing 3 jobs: 1. being 'the' api server, 2. being the ssr (server side rendering) server AND 3. serving up the assets (static files.) In reality in a large scale web application these 3 jobs will need to be separated for lots of good reasons:
+
+ 1. independent deployability
+ 2. independent scaling
+ 3. differing security concerns
+
+Therefore this seed project separates these responsibilities out with nginx being in front of everything acting as a reverse proxy (and serving up the static assets) with a node ssr server who's sole responsibility is server side rendering. (Possible api server to come, but not the current focus of this project.)
+
 ## Introduction:
 
 This repo attempts to give a sensible basis for building a website using:
