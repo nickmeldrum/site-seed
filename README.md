@@ -2,7 +2,7 @@
 
 ## Motivation:
 
-I got fed up with (mostly React) starter kits being little more than a demo project - not truly ready to go to production and actually quite lacking in a decent dev environment (lots of react/webpack bells and whistles but little true infrastructure meat.) This attempts to address this and by way of building the application on top of docker utilising nginx in front of node servers should provide a sound basis for a truly reliable dev AND PRODUCTION ready web application.
+I got fed up with (mostly React) starter kits being little more than a demo project - not truly ready to go to production and/or the dev environment ending up too different to the prod environment in ways that could potentially introduce production only issues. This attempts to address this and by way of building the application on top of docker utilising nginx in front of node servers should provide a sound basis for a truly reliable dev AND PRODUCTION ready web application.
 
 Another key motivation was separation of concerns from an infrastructure point of view. Too often I see the same node server doing 3 jobs: 1. being 'the' api server, 2. being the ssr (server side rendering) server AND 3. serving up the assets (static files.) In reality in a large scale web application these 3 jobs will need to be separated for lots of good reasons:
 
