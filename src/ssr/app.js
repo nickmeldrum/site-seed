@@ -1,15 +1,9 @@
-import path from 'path'
 import express from 'express'
-import expressHandlebars from 'express-handlebars'
 
-const app = express()
+const router = express.Router()
 
-app.engine('handlebars', expressHandlebars())
-app.set('view engine', 'handlebars')
-app.set('views', path.join(__dirname, '/views'))
-
-app.use((req, res) => {
-    res.render('index', { route: req.url })
+router.use((req, res) => {
+  res.render('index', { route: req.url, data: 'foobar' })
 })
 
-export default app
+module.exports = router

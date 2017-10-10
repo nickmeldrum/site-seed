@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "ssr": "node ./src/ssr/index.js",
-    "dev-ssr": "nodemon src/ssr/index.js",
+    "dev-ssr": "node src/ssr/index.js",
     "ui": "webpack",
     "dev-ui": "webpack-dev-server -d --port 80 --host 0.0.0.0",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,11 +21,11 @@
   "dependencies": {
     "babel-preset-es2015": "^6.24.1",
     "babel-register": "^6.24.1",
+    "chokidar": "^1.7.0",
     "express": "^4.15.3",
     "express-handlebars": "^3.0.0"
   },
   "devDependencies": {
-    "nodemon": "^1.12.1",
     "webpack": "^3.4.1",
     "webpack-dev-server": "^2.9.1"
   }
