@@ -103,14 +103,19 @@ Execute the `stop-dev` script which simply does a `docker-compose down` against 
 
 ## Next steps:
 
+ * THinking about react app design, read the following:
+   * https://medium.com/faceyspacey/redux-first-router-data-fetching-solving-the-80-use-case-for-async-middleware-14529606c262
+   * https://formidable.com/blog/2016/07/11/let-the-url-do-the-talking-part-1-the-pain-of-react-router-in-redux/
+   * https://formidable.com/blog/2016/07/19/let-the-url-do-the-talking-part-2-bargaining-and-acceptance-with-redux-and-react-router/
+   * https://formidable.com/blog/2016/07/25/let-the-url-do-the-talking-part-3-empower-the-url-with-redux-little-router/
+
  * rename prod and dev docker images so they aren't the same name?
  * Get React RHL in
- * Get Redux in
+ * Get Redux in?
  * How to handle HEAD injects in an ssr world (e.g. title in head based on ui code ala Helmet?)
  * get routing in? (start to look at next.js?)
  * get SSR dealing with 404's
  * how to deal with errors?
- * where are my ssr/react warnings in my dev console?
  * get asset cache busting into prod build
  * fix dev ssl 
   * get CA and IA setup to be trusted by home mbp
