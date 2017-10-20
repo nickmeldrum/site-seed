@@ -1,8 +1,8 @@
 import express from 'express'
 import http from 'http'
 
-import './dev-cache-clear'
-import viewSetup from './view-setup'
+import 'dev-cache-clear'
+import viewSetup from 'view-setup'
 
 const defaultPort = 80
 const app = express()

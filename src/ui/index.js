@@ -1,9 +1,5 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import { wrapComponentInStore } from 'store'
+import RootComponent from 'components'
+import renderReactToDom from 'dom'
 
-import Hello from './components/Hello'
-
-ReactDOM.hydrate(
-  <Hello />,
-  window.document.getElementById('container')
-)
+renderReactToDom(wrapComponentInStore(RootComponent))
