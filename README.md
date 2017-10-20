@@ -105,6 +105,7 @@ Execute the `stop-dev` script which simply does a `docker-compose down` against 
 
  * document redux structure/ ssr decisions/ import resolving/ extensions structure
  * add tests around all modules!
+ * ensure redux devtools is turned off in production
  * THinking about react app design, read the following:
    * https://medium.com/faceyspacey/redux-first-router-data-fetching-solving-the-80-use-case-for-async-middleware-14529606c262
    * https://formidable.com/blog/2016/07/11/let-the-url-do-the-talking-part-1-the-pain-of-react-router-in-redux/
