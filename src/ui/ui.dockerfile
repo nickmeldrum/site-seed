@@ -10,4 +10,4 @@ RUN yarn
 COPY .babelrc /usr/src/app/.babelrc
 
 EXPOSE 80
-CMD [ "yarn", "dev-ui" ]
+CMD [ "yarn", "ui:dev" ]

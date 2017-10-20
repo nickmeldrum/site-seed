@@ -6,10 +6,11 @@
   "main": "index.js",
   "scripts": {
     "ssr": "node ./src/ssr/index.js",
-    "dev-ssr": "node src/ssr/index.js",
+    "ssr:dev": "node ./src/ssr/index.js",
     "ui": "webpack",
-    "dev-ui": "webpack-dev-server -d --port 80 --host 0.0.0.0",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "ui:dev": "webpack-dev-server -d --port 80 --host 0.0.0.0",
+    "test": "jest",
+    "test:watch": "npm test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -32,7 +33,9 @@
     "redux": "^3.7.2"
   },
   "devDependencies": {
+    "babel-jest": "^21.2.0",
     "babel-loader": "^7.1.2",
+    "jest": "^21.2.1",
     "webpack": "^3.4.1",
     "webpack-dev-server": "^2.9.1"
   }

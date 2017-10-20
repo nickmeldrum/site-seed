@@ -10,4 +10,4 @@ RUN yarn
 COPY ./.babelrc /usr/src/app/.babelrc
 EXPOSE 80
 
-CMD [ "yarn", "dev-ssr" ]
+CMD [ "yarn", "ssr:dev" ]

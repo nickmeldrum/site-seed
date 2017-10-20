@@ -129,6 +129,7 @@ Execute the `stop-dev` script which simply does a `docker-compose down` against 
  * site monitoring/ error uploading/ pinging
  * dealing with render failures - error boundaries
  * ensure we are using the development and production version of react and other libraries etc.
+ * ensure we are only yarn installing the production dependencies in the ssr container
  * get asset cache busting into prod build
  * get testing working
    * Jest? Enzyme
