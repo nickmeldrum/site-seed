@@ -1,2 +1,4 @@
-export default typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__
-    ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f
+import { inBrowser, root } from 'browser'
+
+export default inBrowser && root.__REDUX_DEVTOOLS_EXTENSION__
+    ? root.__REDUX_DEVTOOLS_EXTENSION__() : f => f

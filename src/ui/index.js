@@ -1,4 +1,6 @@
-import RootComponent from 'components'
-import renderReactToDom from 'dom'
+import ReactDOM from 'react-dom'
 
-renderReactToDom(RootComponent)
+import RootComponent from 'components'
+import { getElementById } from 'browser/document'
+
+ReactDOM.hydrate(RootComponent, getElementById('container'))
