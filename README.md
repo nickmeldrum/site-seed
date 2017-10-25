@@ -121,6 +121,8 @@ Execute the `stop-dev` script which simply does a `docker-compose down` against 
   * use normalizr?
   * bring in reselect for selectors - check reselect with immutable
   * use redux-ui for forms?
+  * redux-optimist or something similar for optimistic updates?
+  * use FSA (flux standard actions!)
  * the big CSS decision!
  * How to handle HEAD injects in an ssr world (e.g. title in head based on ui code ala Helmet?)
  * get routing in? (start to look at next.js?)

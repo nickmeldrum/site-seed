@@ -1,3 +1,3 @@
 import { root } from './'
 
-export const getElementById = root.document.getElementById
+export const getElementById = id => root.document.getElementById(id)
