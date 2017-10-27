@@ -1,7 +1,7 @@
 import reducer from './'
 
 jest.mock('./initial-state', () => { return { name: 'test-name' } })
-jest.mock('../actions/types', () => { return { UPDATE_NAME: 'update' } })
+jest.mock('../actions', () => { return { types: { UPDATE_NAME: 'update' } } })
 
 describe('customer model', () => {
   describe('state', () => {
@@ -18,7 +18,7 @@ describe('customer model', () => {
     it('will return new name in state when action is UPDATE_NAME', () => {
       expect(reducer(
         {name: 'original-name'},
-        {type: 'update', name: 'new-name'}
+        {type: 'update', payload: 'new-name'}
       ).name).toEqual('new-name')
     })
   })
