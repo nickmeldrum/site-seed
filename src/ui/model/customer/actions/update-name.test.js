@@ -1,4 +1,5 @@
-import { types, updateName } from './'
+import updateName from './update-name'
+import * as types from './types'
 
 describe('customer model', () => {
   describe('actions', () => {

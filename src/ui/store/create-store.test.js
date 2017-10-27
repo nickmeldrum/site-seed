@@ -3,7 +3,7 @@ import redux from 'redux'
 const mockEnhancer = { enhancer: true }
 const mockReducer = { reducer: true }
 
-jest.mock('redux', () => { return { createStore: jest.fn() } })
+jest.mock('redux', () => ({ createStore: jest.fn() }))
 jest.mock('./enhancer', () => mockEnhancer)
 jest.mock('./reducers', () => mockReducer)
 

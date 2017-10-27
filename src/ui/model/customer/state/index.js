@@ -1,11 +1,8 @@
-import { types } from '../actions'
-import initialState from './initial-state'
+import { handleActions } from 'redux-actions'
 
-export default (state = initialState, action = {}) => {
-  switch (action.type) {
-    case types.UPDATE_NAME:
-      return Object.assign({}, initialState, {name: action.payload})
-    default:
-      return state
-  }
-}
+import initialState from './initial-state'
+import { UPDATE_NAME } from '../actions/types'
+
+export default handleActions({
+  [UPDATE_NAME]: (state, action) => Object.assign({}, initialState, {name: action.payload}),
+}, initialState)

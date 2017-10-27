@@ -1,10 +1,4 @@
-import { types } from './'
+import { createAction } from 'redux-actions'
+import { UPDATE_NAME } from './types'
 
-export default newName => {
-  return {
-    type: types.UPDATE_NAME,
-    payload: newName,
-    error: false,
-    meta: {},
-  }
-}
+export default createAction(UPDATE_NAME)
