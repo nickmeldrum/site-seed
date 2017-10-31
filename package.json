@@ -10,7 +10,7 @@
     "ui": "webpack",
     "ui:dev": "webpack-dev-server -d --port 80 --host 0.0.0.0",
     "test": "jest",
-    "test:watch": "npm test -- --watch"
+    "test:watch": "jest --watch --notify"
   },
   "repository": {
     "type": "git",
