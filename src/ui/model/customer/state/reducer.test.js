@@ -1,4 +1,4 @@
-import reducer from './'
+import reducer from './reducer'
 import initialState from './initial-state'
 
 jest.mock('../actions/types', () => ({ UPDATE_NAME: 'update' }))
